@@ -45,9 +45,13 @@ writeFileSync(resolve(here, "wrangler.jsonc"), wrangler);
 const hasBun = spawnSync("bun", ["--version"], { stdio: "ignore" }).status === 0;
 if (hasBun) {
   run("bun", ["install"], here);
+  // Install wrangler locally so the deploy step's `npx wrangler deploy` uses it
+  // instead of npx fetching it (npx trips over the release's npm overrides).
+  run("bun", ["add", "--dev", "wrangler@4"], here);
   run("bun", ["run", "build"], here);
 } else {
   run("npm", ["install"], here);
+  run("npm", ["install", "--save-dev", "wrangler@4"], here);
   run("npm", ["run", "build"], here);
 }
 console.log(`Built site release ${src.version}`);
