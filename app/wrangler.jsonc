@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "legacy-site",
+  "name": "41legacy-site",
   "main": "dist/server/server.js",
   "compatibility_date": "2025-05-01",
   "compatibility_flags": ["nodejs_compat"],
@@ -10,7 +10,7 @@
     "binding": "ASSETS",
     "not_found_handling": "none"
   },
-  "vars": { "HF_ENV": "production", "APP_SLUG": "legacy-site" },
+  "vars": { "HF_ENV": "production", "APP_SLUG": "41legacy-site" },
   "d1_databases": [
     {
       "binding": "DB",

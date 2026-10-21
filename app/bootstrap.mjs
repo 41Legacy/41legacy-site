@@ -37,7 +37,10 @@ if (sum !== src.sha256) {
 }
 const archive = resolve(tmpdir(), `site-${src.version}.tgz`);
 writeFileSync(archive, buf);
+// The Worker name, D1 binding and vars live in this repo's wrangler.jsonc, not the release.
+const wrangler = readFileSync(resolve(here, "wrangler.jsonc"), "utf8");
 run("tar", ["-xzf", archive, "-C", root], root);
+writeFileSync(resolve(here, "wrangler.jsonc"), wrangler);
 
 const hasBun = spawnSync("bun", ["--version"], { stdio: "ignore" }).status === 0;
 if (hasBun) {

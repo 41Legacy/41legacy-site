@@ -2,7 +2,7 @@
 
 The 41 Legacy website: enterprise value focused fractional CFO and value growth advisory.
 
-Hosted on a Cloudflare Worker (`legacy-site`) with a D1 database (`legacy-site-db`).
+Hosted on a Cloudflare Worker (`41legacy-site`) with a D1 database (`legacy-site-db`).
 Forms, the owner check and the advisor check write to GoHighLevel (41 Legacy sub-account).
 
 ## How deploys work
