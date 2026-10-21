@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "legacy-site",
+  "main": "dist/server/server.js",
+  "compatibility_date": "2025-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  },
+  "vars": { "HF_ENV": "production", "APP_SLUG": "legacy-site" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "legacy-site-db",
+      "database_id": "6126e0a8-0387-4183-a784-3a7640b5ab06",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "41legacy-site-bootstrap",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node bootstrap.mjs"
+  }
+}
